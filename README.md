@@ -81,7 +81,7 @@ Below is a brief description of the folders and files in this repository:
 3. **AWS Account** (if you plan to use S3, Glue, Redshift, etc.).  
 4. **Reddit API Credentials** (client ID and secret).  
 
----
+
 
 ## Setup Instructions
 
@@ -104,20 +104,34 @@ Below is a brief description of the folders and files in this repository:
      ```
    - You can also set these variables in your system environment if preferred.
 
-3. **Install Dependencies (if running locally)**  
+3. **Create and Activate a Virtual Environment**  
+   - Create a virtual environment:
+     ```bash
+     python3 -m venv venv
+     ```
+   - Activate the virtual environment:
+     ```bash
+     source venv/bin/activate
+     ```
+
+4. **Install Dependencies (if running locally)**  
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Start Docker Containers**  
+5. **Start Docker Containers**  
    - To run Airflow, Postgres, Redis, and Celery workers:
      ```bash
      docker-compose up -d
      ```
    - This will spin up all services needed for Airflow to orchestrate the pipeline.
 
-5. **Access Airflow**  
+6. **Access Airflow**  
    - Once containers are up, navigate to `http://localhost:8080` (or the mapped port in your Docker Compose file) and log in using the default credentials specified in the `docker-compose.yml` (often `airflow` / `airflow`).
+
+---
+
+Feel free to copy and use these instructions in your README file!
 
 
 
